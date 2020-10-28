@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Righteous&display=swap");
+
+:root {
+  --light-pink: rgb(250, 177, 177);
+  --dark-red: #400000;
+  --regular-font: "Lato", sans-serif;
+  --beating-animation: beating 0.7s infinite ease-in-out;
+}
+
+@keyframes beating {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  text-align: center;
+  background-image: linear-gradient(var(--dark-red), black);
+  background-size: cover;
+  height: 100vh;
+  font-family: var(--regular-font);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.title {
+  margin-top: -200px;
+}
+
+.title h1 {
+  font-family: "Righteous", cursive;
+  font-size: 6rem;
+  color: var(--light-pink);
+  text-shadow: 5px 5px 5px rgba(180, 102, 102, 0.5);
+}
+
+.title h1:hover {
+  animation: var(--beating-animation);
+  cursor: default;
+}
+
+.age-form * {
+  margin-bottom: 1rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.description p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.age-form input,
+select {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.age-form input::placeholder {
+  font-family: var(--regular-font);
+}
+
+.age-form select {
+  font-family: var(--regular-font);
+}
+
+.age-form #age {
+  width: 8rem;
+}
+
+.age-form .submit-btn {
+  color: white;
+  background-color: transparent;
+  border: 1px solid var(--light-pink);
+  padding: 0.5rem 1rem;
+}
+
+.age-form .submit-btn:hover {
+  color: var(--light-pink);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease;
+  animation: var(--beating-animation);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: -2rem;
+}
+
+.results-container {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results-container section {
+  margin-bottom: 1rem;
+}
+
+.results-container span {
+  color: var(--light-pink);
+  font-weight: bold;
+}
+
+section a {
+  color: var(--light-pink);
+  font-size: 1rem;
+}
+
+footer {
+  width: 98%;
+  position: absolute;
+  bottom: 1rem;
+}

@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pumped</title>
+    <script defer src="index.js"></script>
+    <link rel="icon" href="https://img.icons8.com/color/20/000000/like.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="title">
+      <h1>Pumped</h1>
+      <div class="heart-container"></div>
+    </header>
+
+    <section class="description">
+      <p>
+        Find your target heart rate.
+        <img
+          class="heart-icon"
+          src="https://img.icons8.com/color/20/000000/like.png"
+        />
+      </p>
+    </section>
+
+    <section class="age-form-container">
+      <form class="age-form">
+        <label for="age">Enter Your Age:</label><br />
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Type a Number"
+          required
+        /><br />
+
+        <label for="intensity">Select Exercise Intensity:</label><br />
+        <select id="intensity" name="intensity" required>
+          <option value="moderate">Moderate</option>
+          <option value="high">High</option></select
+        ><br />
+
+        <input type="submit" class="submit-btn" value="Submit" />
+      </form>
+    </section>
+
+    <section class="results-container"></section>
+
+    <footer>
+      <a href="https://www.linkedin.com/in/vuonganht/" target="_blank"
+        ><img src="https://img.icons8.com/nolan/40/linkedin.png"
+      /></a>
+      <a href="https://github.com/vuonga1103" target="_blank"
+        ><img src="https://img.icons8.com/nolan/40/github.png"
+      /></a>
+      <a href="https://vuonganht.medium.com/" target="_blank"
+        ><img src="https://img.icons8.com/nolan/40/medium-new.png"
+      /></a>
+    </footer>
+  </body>
+</html>
