@@ -18,9 +18,12 @@
   function handleFormSubmit(e) {
     e.preventDefault();
     const { age, intensity } = e.target;
-    parseInt(age.value) > 0
-      ? renderHeartRates(age.value, intensity.value)
-      : alert("Age cannot be below 0!");
+
+    if (parseInt(age.value) <= 0 || parseInt(age.value) >= 200) {
+      alert("Please enter a valid age.");
+    } else {
+      renderHeartRates(age.value, intensity.value);
+    }
   }
 
   function handleHeartBeat() {
@@ -44,12 +47,18 @@
       intensity === "moderate" ? calculateHR(0.7) : calculateHR(0.85);
 
     resultsContainer.innerHTML = `
+      
+
       <section>
-        Your <span>maximum</span> heart rate is <span>${maxHeartRate} beats per minute </span>(bpm).
+        Your target heart rate range during <span>${intensity}-intensity</span> activities is between <span>${intensityStart} to ${intensityEnd}</span> beats per minute (bpm).
       </section>
 
       <section>
-        Your target heart rate range during <span>${intensity}-intensity</span> activities is between <span>${intensityStart} to ${intensityEnd}</span> bpm.
+        Your <span>maximum</span> heart rate is <span>${maxHeartRate} </span>bpm.
+      </section>
+
+      <section>
+        For the average adult, resting heart rate is normally between <span>60 to 100</span> bpm.
       </section>
 
       <section>
